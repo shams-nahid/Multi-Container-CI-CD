@@ -1,0 +1,35 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "ContainerDefinitions": [
+    {
+      "name": "client",
+      "image": "bmshamsnahid/multi-client",
+      "hostname": "client",
+      "essentials": false
+    },
+    {
+      "name": "server",
+      "image": "bmshamsnahid/multi-server",
+      "hostname": "api",
+      "essentials": false
+    },
+    {
+      "name": "worker",
+      "image": "bmshamsnahid/multi-worker",
+      "hostname": "worker",
+      "essentials": false
+    },
+    {
+      "name": "nginx",
+      "image": "bmshamsnahid/multi-nginx",
+      "hostname": "nginx",
+      "essentials": true,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 80
+        }
+      ]
+    }
+  ]
+}
