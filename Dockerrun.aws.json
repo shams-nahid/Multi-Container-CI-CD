@@ -1,23 +1,26 @@
 {
   "AWSEBDockerrunVersion": 2,
-  "ContainerDefinitions": [
+  "containerDefinitions": [
     {
       "name": "client",
       "image": "bmshamsnahid/multi-client",
       "hostname": "client",
-      "essentials": false
+      "essential": false,
+      "memory": 128
     },
     {
       "name": "server",
       "image": "bmshamsnahid/multi-server",
       "hostname": "api",
-      "essentials": false
+      "essential": false,
+      "memory": 128
     },
     {
       "name": "worker",
       "image": "bmshamsnahid/multi-worker",
       "hostname": "worker",
-      "essentials": false
+      "essential": false,
+      "memory": 128
     },
     {
       "name": "nginx",
@@ -29,7 +32,8 @@
           "hostPort": 80,
           "containerPort": 80
         }
-      ]
+      ],
+      "memory": 128
     }
   ]
 }
